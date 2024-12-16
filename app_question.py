@@ -6,8 +6,8 @@ from openai import AzureOpenAI
 
 # Set up Azure OpenAI client
 client = AzureOpenAI(
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    azure_endpoint=st.secrets["AZURE_OPENAI_ENDPOINT"],  # Lấy endpoint từ secrets
+    api_key=st.secrets["AZURE_OPENAI_API_KEY"],         # Lấy API key từ secrets
     api_version="2024-05-01-preview"
 )
 
